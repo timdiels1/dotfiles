@@ -1,0 +1,14 @@
+[user]
+	name = timdiels1
+	email = info@tim-diels.be
+
+[pack]
+	windowMemory = 256m
+
+[core]
+	fileMode = false
+	editor = vi
+	excludesfile = /Users/tim/.gitignore_global
+
+[push]
+	default = current
