@@ -93,6 +93,8 @@
     alias lsd="ls -d1 */"
     alias ft="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
     alias ftg="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/' | grep"
+    alias cds="cd Sites"
+    alias cdw="cd Workspace"
 
 ### misc
     alias mkdir="mkdir -pv"
