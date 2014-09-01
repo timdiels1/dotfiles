@@ -25,7 +25,7 @@
 
     #### vagrant
         alias vlog="VAGRANT_LOG=INFO "
-        alias vup="sudo echo Thanks! && vagrant up"
+        alias vup="sudo echo Thanks! && vagrant up && terminal-notifier -title 'Vagrant up completed' -sound 'default' -message 'Get back to your command line!'"
         alias vssh="vagrant ssh"
         alias vha="vagrant halt"
         alias vsu="vagrant suspend"
