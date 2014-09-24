@@ -62,3 +62,4 @@ if [ -f ~/.shrc ]; then
 else
   print "Error: ~/.shrc not found."
 fi
+export PATH="/usr/local/mysql/bin:$PATH"

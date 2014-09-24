@@ -77,8 +77,15 @@
       alias vafy5="cp -r ~/workspace/vagrant/centos-alfresco/Vagrantfile .; cp -r ~/workspace/vagrant/centos-alfresco/alfresco_scripts .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/centos-alfresco/scripts ."
       # Carrefour My Invoice
       alias vafy6="cp -r ~/workspace/vagrant/myinvoice/Vagrantfile .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/myinvoice/scripts ."
+      # Symfony
+      alias vafy7="cp -r ~/workspace/vagrant/symfony/Vagrantfile .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/symfony/scripts ."
 
-    ### list and search 
+    ### misc
+      # construct scp command
+      alias scp+="sh ~/Workspace/shell_scripts/scp+.sh"
+
+  ## list and search
+
     alias ali="alias"
     alias alig="alias | grep"
     alias etcexg="less /etc/exports | grep"
@@ -86,7 +93,8 @@
     alias lbahg="less .bash_history | grep"
     alias hosts="sudo vi /etc/hosts"
 
-    ### list directory content
+  ## list directory content
+
     alias ll="clear; pwd; ls -lah"
     alias ll+="pwd; ls -aFGhlOTs"
     alias ll-="clear; ls -1aF && echo ''"
@@ -98,7 +106,7 @@
 
 ### misc
     alias mkdir="mkdir -pv"
-    
+
     alias flushdns="sudo killall -HUP mDNSResponder"
     alias line="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
 
@@ -112,10 +120,10 @@
     alias io="iostat -w1" # disply disk i/o
 
 # Papertrail
-pt() { 
+pt() {
   if [[ $@ == *-h* ]] then;
     papertrail "$@"
-  else 
+  else
     papertrail "$@" | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[0m\1\e[1;30m\2\e[0;33m\3\e[0m\4\e[1;34m\5\e[0m/g'
   fi
 }
