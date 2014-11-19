@@ -52,6 +52,7 @@
       alias gbrd="git branch -d"
       alias gbrdr="git push origin --delete"
       alias gfp="git fetch --prune"
+      alias gru="git remote set-url origin"
 
     ### sublime text
       alias sub='subl . &'
