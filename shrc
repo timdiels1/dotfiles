@@ -20,13 +20,14 @@
 
     ### drush
         alias dvupwd="drush @vagrant1 upwd admin --password='admin'"
+	alias dv2upwd="drush @vagrant2 upwd admin --password='admin'"
         alias dvcc="drush @vagrant1 cc all"
         alias dvup="dvupwd && dvcc"
         alias dvdb="drush @vagrant1 sql-dump --result-file=/home/vagrant/db/vagrant-sql-dump.sql"
 
     #### vagrant
         alias vlog="VAGRANT_LOG=INFO "
-        alias vup="sudo echo Thanks! && vagrant up && terminal-notifier -title 'Vagrant up completed' -sound 'default' -message 'Get back to your command line!'"
+        alias vup="vagrant up && terminal-notifier -title 'Vagrant up completed' -sound 'default' -message 'Get back to your command line!'"
         alias vssh="vagrant ssh"
         alias vha="vagrant halt"
         alias vsu="vagrant suspend"
@@ -36,6 +37,7 @@
         alias vcpu='cd ~/workspace/vagrant/ && git pull'
         alias vcp='_() { cp -r ~/workspace/vagrant/$1/Vagrantfile .; cp -r ~/workspace/vagrant/$1/scripts . ; }; _'
         alias dv="drush @vagrant1"
+        alias dv2="drush @vagrant2"
 
 
     ### git
@@ -54,6 +56,7 @@
       alias gbrdr="git push origin --delete"
       alias gfp="git fetch --prune"
       alias gru="git remote set-url origin"
+      alias gs="git log --all --oneline | grep "
 
     ### sublime text
       alias sub='subl . &'
@@ -80,7 +83,9 @@
       
       # Contrib module enable and settings
       alias dvendi="dv en dummyimage -y && dv vset dummyimages_generate "2" && dv vset dummyimages_service "dummyimage" && dv vset dummyimages_background "cccccc" && dv vset dummyimages_color "000000" && dv vset dummyimages_default_height "300" && dv vset dummyimages_default_width "300""
+	alias dv2endi="dv2 en dummyimage -y && dv2 vset dummyimages_generate "2" && dv2 vset dummyimages_service "dummyimage" && dv2 vset dummyimages_background "cccccc" && dv2 vset dummyimages_color "000000" && dv2 vset dummyimages_default_height "300" && dv2 vset dummyimages_default_width "300""
       alias dvenre="dv en reroute_email -y && dv vset reroute_email_enable "1" && dv vset reroute_email_address "tim.diels@wunderkraut.com" && dv vset reroute_email_enable_message "1""
+	alias dv2enre="dv2 en reroute_email -y && dv2 vset reroute_email_enable "1" && dv2 vset reroute_email_address "tim.diels@wunderkraut.com" && dv2 vset reroute_email_enable_message "1""
   ## list and search
 
     alias ali="alias"
@@ -89,6 +94,7 @@
     alias etchog="less /etc/hosts | grep"
     alias lbahg="less .bash_history | grep"
     alias hosts="sudo vi /etc/hosts"
+    alias khosts="sudo vi ~/.ssh/known_hosts"
 
   ## list directory content
 
@@ -98,8 +104,8 @@
     alias lsd="ls -d1 */"
     alias ft="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
     alias ftg="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/' | grep"
-    alias cds="cd Sites"
-    alias cdw="cd Workspace"
+    alias cds="cd ~/Sites"
+    alias cdw="cd ~/Workspace"
 
 ### misc
     alias mkdir="mkdir -pv"

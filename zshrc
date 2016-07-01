@@ -44,7 +44,7 @@ plugins=(git)
 ZSH_THEME="robbyrussell" # default, git support
 # ZSH_THEME="jreese" # minimal layout, git support
 #ZSH_THEME="sjugge-02" # hack of jreese theme
-# ZSH_THEME="juanghurtado" # multiple line, advanced git status support 
+# ZSH_THEME="juanghurtado" # multiple line, advanced git status support
 # ZSH_THEME="minimal" # minimal layout, git support
 # ZSH_THEME="norm" minimal layout, git support
 
@@ -63,3 +63,4 @@ else
   print "Error: ~/.shrc not found."
 fi
 export PATH="/usr/local/mysql/bin:$PATH"
+export PATH=$PATH:/Users/Tim/Workspace/drush
