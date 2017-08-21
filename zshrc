@@ -64,3 +64,5 @@ else
 fi
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH=$PATH:/Users/Tim/Workspace/drush
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="$PATH:/Users/tim/Workspace/spark-installer"

@@ -20,10 +20,10 @@
 
     ### drush
         alias dvupwd="drush @vagrant1 upwd admin --password='admin'"
-	alias dv2upwd="drush @vagrant2 upwd admin --password='admin'"
         alias dvcc="drush @vagrant1 cc all"
         alias dvup="dvupwd && dvcc"
         alias dvdb="drush @vagrant1 sql-dump --result-file=/home/vagrant/db/vagrant-sql-dump.sql"
+	alias dvcr="drush @vagrant1 cr && terminal-notifier -title 'Cache rebuilded' -sound 'default' -message 'Get back to your command line!'"
 
     #### vagrant
         alias vlog="VAGRANT_LOG=INFO "
@@ -37,7 +37,6 @@
         alias vcpu='cd ~/workspace/vagrant/ && git pull'
         alias vcp='_() { cp -r ~/workspace/vagrant/$1/Vagrantfile .; cp -r ~/workspace/vagrant/$1/scripts . ; }; _'
         alias dv="drush @vagrant1"
-        alias dv2="drush @vagrant2"
 
 
     ### git
@@ -57,15 +56,18 @@
       alias gfp="git fetch --prune"
       alias gru="git remote set-url origin"
       alias gs="git log --all --oneline | grep "
-
+  
     ### sublime text
       alias sub='subl . &'
 
-  ### virtualbox
+    ### virtualbox
       alias vbl="VBoxManage list vms"
       alias vbla="VBoxManage list runningvms"
       alias vblg="VBoxManage list vms | grep"
       alias vbre="sudo /Library/StartupItems/VirtualBox/VirtualBox restart"
+
+    ###  homestead
+      alias vm='ssh vagrant@127.0.0.1 -p 2222'
 
   ## custom scripts
 
@@ -116,7 +118,7 @@
     alias st="clear && git status && svn status && vagrant status"
 
   # Grep alias
-    alias grep="grep -rn --color --exclude-dir=.svn"
+    #alias grep="grep -rn --color --exclude-dir=.svn"
 
   ## system
     alias cpu="top -F -R -o cpu" # display top CPU processes
@@ -130,3 +132,8 @@ pt() {
     papertrail "$@" | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[0m\1\e[1;30m\2\e[0;33m\3\e[0m\4\e[1;34m\5\e[0m/g'
   fi
 }
+# Homestead
+function homestead() {
+    ( cd ~/Workspace/Homestead && vagrant $* )
+}
+

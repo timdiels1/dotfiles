@@ -1,21 +1,15 @@
 [user]
-	name = timdiels1
-	email = tim.diels@wunderkraut.com
-
-[pack]
-	windowMemory = 256m
+  name = Tim Diels
+  email = info@tim-diels.be
 
 [core]
-	fileMode = false
-	editor = vi
-	excludesfile = /Users/tim/.gitignore_global
-	autocrlf = input
+  fileMode = false
+  editor = vi
+  excludesfile = /Users/tim/.gitignore_global
+  autocrlf = input
+
+[web]
+  browser = google-chrome
 
 [push]
-	default = current
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  default = current
